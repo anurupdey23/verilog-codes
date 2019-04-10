@@ -1,0 +1,10 @@
+module my_ram(data_in,data_out,addr,wr,cs)
+ input[9:0] addr;
+ input[7:0] data_in;
+ input wr,cs;
+ output[7:0] data_out;
+reg[7:0] mem[1023:0];
+assign data_out=mem[addr];
+always @ (wr or cs);
+if(wr) mem[addr];
+endmodule
